@@ -41,7 +41,7 @@
       let psw_ = psw.value;
       let url = "/user";
       let data = {
-        name: uname_,
+        uname: uname_,
         psw: psw_
       }
       fetch(url, {
@@ -49,7 +49,7 @@
         headers: {
           "Content-Type": "application/json"
         },
-        body: data
+        body: JSON.stringify(data)
       })
        .then(alert(1))
     }
