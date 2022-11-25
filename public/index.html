@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  <script src="https://cdn.tailwindcss.com"></script> -->
+  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+<!-- latest -->
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+<!-- core style only -->
+<link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: "Press Start 2P", "Helvetica Neue";
+    }
+  </style>
+  <title>Entrance</title>
+</head>
+<body style="background-color:#212529">
+  <div>
+  <h2 class="nes-text is-primary">Login</h2>
+  <br>
+  <input placeholder="Enter username" id="uname">
+  <br>
+  <input type="password" id="psw" placeholder="Enter password">
+  <br>
+  <br>
+  <button class="nes-btn">Enter the System</button>
+  </div>
+</body>
+  <script>
+    let uname = document.getElementById("uname");
+    let psw = document.getElementById("psw");
+    let btn = document.querySelector("button");
+    btn.onclick = function() {
+      let uname_ = uname.value;
+      let psw_ = psw.value;
+      let url = "/user";
+      let data = {
+        name: uname_,
+        psw: psw_
+      }
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: data
+      })
+       .then(alert(1))
+    }
+  </script>
+</html>
