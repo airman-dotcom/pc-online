@@ -51,7 +51,13 @@
         },
         body: JSON.stringify(data)
       })
-       .then(alert(1))
+       .then(res => res.json())
+       .then(function(res){
+        if (res.status){
+            alert("Access granted.");
+            window.location.href = "/desktop";
+        }
+       })
     }
   </script>
 </html>
