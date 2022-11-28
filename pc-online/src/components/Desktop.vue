@@ -6,11 +6,20 @@ let s = ref(false)
 function show_(thing){
   s = true;
 }
+function v(e){
+console.log(1)
+  document.querySelector(`.${e[2]}`).classList.add("animate-bounce")
+  setTimeout(function(){
+    document.querySelector(`.${e[2]}`).classList.remove("animate-bounce")
+    document.querySelector(`.${e[2]}`).classList.add("animate")
+  }, 2000)
+  
+}
 const u = [["black", "white", "Terminal"], ["lightGreen", "blue", "Chrome"], ["blue", "white", "Chat"]]
 </script>
 <template>
   <div class="grid grid-cols-3 gap-4 place-content-center h-48" >
-    <Test class="app rounded-lg justify-self-center self-stretch" v-for="a in u" v-bind:key="u.indexOf(a)" :use=a />
+    <Test @click="v(a)" class="app rounded-lg justify-self-center self-stretch" :class="a[2]" v-for="a in u" v-bind:key="u.indexOf(a)" :use=a />
   </div>
 </template>
 
@@ -29,5 +38,12 @@ const u = [["black", "white", "Terminal"], ["lightGreen", "blue", "Chrome"], ["b
   height: calc(100vw/8);
   text-align: center;
   line-height: calc(100vw/8);
+}
+@keyframes o {
+    from: {width: calc(100vw/8);}
+    to: {width: calc(100vw/4);}
+  }
+.animate {
+  animation: o 2s linear;
 }
 </style>

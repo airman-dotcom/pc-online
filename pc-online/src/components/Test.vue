@@ -5,7 +5,10 @@ let a = defineProps({
 })
 
 function b(){
-    alert(a.use[2])
+  /*document.querySelector("div").classList.add("animate-bounce")
+  setTimeout(function(){
+    document.querySelector("div").classList.remove("animate-bounce")
+  }, 2000)*/
 }
 
 </script>
