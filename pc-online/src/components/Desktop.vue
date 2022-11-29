@@ -3,15 +3,24 @@ import T from "./Terminal.vue";
 import Test from "./Test.vue";
 import {ref} from "vue";
 let s = ref(false)
+
 function show_(thing){
   s = true;
+}
+function open(element){
+  element.classList.add("animate-o");
+  setTimeout(function(){
+    element.classList.remove("app");
+    element.classList.add("appo")
+    element.style.color = "transparent !important;"
+  }, 1000)
 }
 function v(e){
 console.log(1)
   document.querySelector(`.${e[2]}`).classList.add("animate-bounce")
   setTimeout(function(){
     document.querySelector(`.${e[2]}`).classList.remove("animate-bounce")
-    document.querySelector(`.${e[2]}`).classList.add("animate")
+    open(document.querySelector(`.${e[2]}`))
   }, 2000)
   
 }
@@ -38,6 +47,13 @@ const u = [["black", "white", "Terminal"], ["lightGreen", "blue", "Chrome"], ["b
   height: calc(100vw/8);
   text-align: center;
   line-height: calc(100vw/8);
+}
+.appo {
+  width: calc(100vw/3);
+  height: calc(100vw/3);
+  text-align: center;
+  line-height: calc(100vw/3);
+  color: transparent;
 }
 @keyframes o {
     from: {width: calc(100vw/8);}

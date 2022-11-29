@@ -1,7 +1,7 @@
 <script setup>
 import Terminal from "./Terminal.vue";
 let a = defineProps({
-    use: Object
+    use: Object,
 })
 
 function b(){
