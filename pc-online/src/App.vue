@@ -5,10 +5,12 @@ import Login from './components/Login.vue'
 import Welcome from "./components/Welcome.vue"
 import Desktop from './components/Desktop.vue';
 import Terminal from "./components/Terminal.vue"
+import Apps from "./components/Apps.vue";
 const routes = {
   "/": Welcome,
   "/login": Login,
-  "/desktop": Desktop
+  "/desktop": Desktop,
+  "/terminal": Terminal
 }
 
 export default {
